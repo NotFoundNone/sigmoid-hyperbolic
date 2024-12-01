@@ -23,23 +23,40 @@ def plot_sigmoid(x_range):
 
 def plot_hyperbolic(x_range):
     """
-    Построение графиков гиперболических функций.
-    Формулы:
-        sinh(x) = (exp(x) - exp(-x)) / 2
-        cosh(x) = (exp(x) + exp(-x)) / 2
-        tanh(x) = sinh(x) / cosh(x)
-    """
+        Построение графиков гиперболических функций.
+        Формулы:
+            sinh(x) = (exp(x) - exp(-x)) / 2
+            cosh(x) = (exp(x) + exp(-x)) / 2
+            tanh(x) = sinh(x) / cosh(x)
+        """
     x = np.linspace(*x_range, 500)
-    y_sinh = sinh(x)
-    y_cosh = cosh(x)
-    y_tanh = tanh(x)
 
-    plt.plot(x, y_sinh, label="sinh(x)", linestyle="--")
-    plt.plot(x, y_cosh, label="cosh(x)", linestyle="-.")
-    plt.plot(x, y_tanh, label="tanh(x)")
-    plt.title("Гиперболические функции")
-    plt.xlabel("x")
-    plt.ylabel("f(x)")
-    plt.legend()
+    # График sinh(x)
+    plt.figure(figsize=(8, 6))
+    plt.plot(x, sinh(x), label="sinh(x)", color="blue", linestyle="--")
+    plt.title("График гиперболического синуса (sinh)", fontsize=14)
+    plt.xlabel("x", fontsize=12)
+    plt.ylabel("sinh(x)", fontsize=12)
     plt.grid(True)
+    plt.legend()
+    plt.show()
+
+    # График cosh(x)
+    plt.figure(figsize=(8, 6))
+    plt.plot(x, cosh(x), label="cosh(x)", color="green", linestyle="-.")
+    plt.title("График гиперболического косинуса (cosh)", fontsize=14)
+    plt.xlabel("x", fontsize=12)
+    plt.ylabel("cosh(x)", fontsize=12)
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+    # График tanh(x)
+    plt.figure(figsize=(8, 6))
+    plt.plot(x, tanh(x), label="tanh(x)", color="red")
+    plt.title("График гиперболического тангенса (tanh)", fontsize=14)
+    plt.xlabel("x", fontsize=12)
+    plt.ylabel("tanh(x)", fontsize=12)
+    plt.grid(True)
+    plt.legend()
     plt.show()
